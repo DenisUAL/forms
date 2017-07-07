@@ -23,8 +23,8 @@ export default class Main extends Component {
               <Route path="/albums/:albumId" component={SingleAlbum} />
               <Route exact path="/artists" component={AllArtists} />
               <Route path="/artists/:artistId" component={SingleArtist} />
-              <Route component={StatefulAlbums} />
               <Route exact path="/new-playlist" component={NewPlaylist} />
+              <Route component={StatefulAlbums} />
             </Switch>
           </div>
           <Player />

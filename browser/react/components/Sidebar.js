@@ -1,7 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Playlist from '../../server/db/models/playlist';
 
 const Sidebar = (props) => {
+
+  axios.get('/playlists')
+  .then(res => res.data)
+  .then(result => {
+      console.log(result) // response json from the server!
+  });
+
 
   return (
     <sidebar>
@@ -26,6 +34,16 @@ const Sidebar = (props) => {
           </Link>
         </h4>
       </section>
+      <hr />
+        <ul className="list-unstyled">
+          {console.log(Playlist)}
+          <li className="playlist-item menu-item">
+            <Link to="FILL_ME_IN">some playlist</Link>
+          </li>
+          <li className="playlist-item menu-item">
+            <Link to="WHERE_TO_GO">another playlist</Link>
+          </li>
+        </ul>
     </sidebar>
   );
 }
